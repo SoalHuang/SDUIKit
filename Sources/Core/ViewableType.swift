@@ -77,11 +77,11 @@ extension ViewableType {
         set { view.transform = newValue }
     }
     
-    @available(iOS 12.0, *)
-    public var transform3D: CATransform3D {
-        get { return view.transform3D }
-        set { view.transform3D = newValue }
-    }
+//    @available(iOS 12.0, *)
+//    public var transform3D: CATransform3D {
+//        get { return view.transform3D }
+//        set { view.transform3D = newValue }
+//    }
     
     @available(iOS 4.0, *)
     public var contentScaleFactor: CGFloat {
@@ -666,7 +666,7 @@ extension ViewableType {
     
     @available(iOS 7.0, *)
     public func snapshotView(afterScreenUpdates afterUpdates: Bool) -> UIView? {
-        view.snapshotView(afterScreenUpdates: afterUpdates)
+        return view.snapshotView(afterScreenUpdates: afterUpdates)
     }
     
     @available(iOS 7.0, *)
@@ -682,11 +682,11 @@ extension ViewableType {
 
 extension ViewableType {
     
-    @available(iOS 13.0, *)
-    public var overrideUserInterfaceStyle: UIUserInterfaceStyle {
-        get { return view.overrideUserInterfaceStyle }
-        set { view.overrideUserInterfaceStyle = newValue }
-    }
+//    @available(iOS 13.0, *)
+//    public var overrideUserInterfaceStyle: UIUserInterfaceStyle {
+//        get { return view.overrideUserInterfaceStyle }
+//        set { view.overrideUserInterfaceStyle = newValue }
+//    }
 }
 
 extension ViewableType {

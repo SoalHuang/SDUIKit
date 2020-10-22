@@ -29,6 +29,7 @@
 		9C3AB5E62060DC290088BF59 /* UIControl+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB5E52060DC290088BF59 /* UIControl+Action.swift */; };
 		9C3AB5EF2061037B0088BF59 /* UIImage+PixelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB5EE2061037B0088BF59 /* UIImage+PixelColor.swift */; };
 		9C3D74EE2463F75200F05E5F /* String+BoundingRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D74ED2463F75200F05E5F /* String+BoundingRect.swift */; };
+		9C53A73D25413439005CC310 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 9C53A73C25413439005CC310 /* Cartfile */; };
 		9C54C4D622897C5400DA8590 /* UIView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54C4D522897C5400DA8590 /* UIView+Color.swift */; };
 		9C6E28E820118889006DBCFA /* SDUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C6E28E620118889006DBCFA /* SDUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C88CF25214678150007BB58 /* String+CICode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88CF24214678150007BB58 /* String+CICode.swift */; };
@@ -96,6 +97,7 @@
 		9C3AB5E52060DC290088BF59 /* UIControl+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Action.swift"; sourceTree = "<group>"; };
 		9C3AB5EE2061037B0088BF59 /* UIImage+PixelColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PixelColor.swift"; sourceTree = "<group>"; };
 		9C3D74ED2463F75200F05E5F /* String+BoundingRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+BoundingRect.swift"; sourceTree = "<group>"; };
+		9C53A73C25413439005CC310 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		9C54C4D522897C5400DA8590 /* UIView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Color.swift"; sourceTree = "<group>"; };
 		9C6E28E320118889006DBCFA /* SDUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6E28E620118889006DBCFA /* SDUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDUIKit.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		9C6E28D920118889006DBCFA = {
 			isa = PBXGroup;
 			children = (
+				9C53A73C25413439005CC310 /* Cartfile */,
 				9C6E28E520118889006DBCFA /* Sources */,
 				9C6E2909201196C5006DBCFA /* Frameworks */,
 				9C6E28E420118889006DBCFA /* Products */,
@@ -400,6 +403,7 @@
 				9C6E28DF20118889006DBCFA /* Frameworks */,
 				9C6E28E020118889006DBCFA /* Headers */,
 				9C6E28E120118889006DBCFA /* Resources */,
+				9C5745ED2541358E00457DF3 /* Carthage Script */,
 			);
 			buildRules = (
 			);
@@ -450,10 +454,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C53A73D25413439005CC310 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9C5745ED2541358E00457DF3 /* Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C6E28DE20118889006DBCFA /* Sources */ = {
