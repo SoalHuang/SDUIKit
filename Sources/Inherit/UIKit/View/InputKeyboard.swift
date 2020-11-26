@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 import SDFoundation
 
 extension InputKeyboard where T: UIDatePicker {
@@ -77,41 +76,54 @@ final public class InputKeyboard<T: ViewableType>: UIView {
     public init(frame: CGRect, content: T) {
         self.content = content
         super.init(frame: frame)
+        
         addSubview(toolBar)
+        
         toolBar.addSubview(leftButton)
         toolBar.addSubview(rightButton)
-        
-        let toolBarLine = UIView()
-        toolBarLine.backgroundColor = UIColor(hex: 0xe1e1e1)
         toolBar.addSubview(toolBarLine)
         
-        toolBar.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview()
-            $0.height.equalTo(44)
-        }
-        
-        toolBarLine.snp.makeConstraints {
-            $0.height.equalTo(1)
-            $0.left.bottom.right.equalToSuperview()
-        }
-        
-        leftButton.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(DeviceIsXGroup ? 50 : 20)
-            $0.width.equalTo(52)
-            $0.height.equalTo(28)
-            $0.centerY.equalToSuperview()
-        }
-        rightButton.snp.makeConstraints {
-            $0.right.equalToSuperview().offset(DeviceIsXGroup ? -50 : -20)
-            $0.width.equalTo(52)
-            $0.height.equalTo(28)
-            $0.centerY.equalToSuperview()
-        }
-        
         insertSubview(content, at: 0)
-        content.snp.makeConstraints {
-            $0.top.equalTo(toolBar.snp.bottom)
-            $0.left.bottom.right.equalToSuperview()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        toolBar.sd.layout {
+            $0.height = 44
+            $0.top = 0
+            $0.left = 0
+            $0.right = bounds.width
+        }
+        
+        toolBarLine.sd.layout {
+            $0.height = 1
+            $0.left = 0
+            $0.bottom = toolBar.bounds.height
+            $0.right = toolBar.bounds.width
+        }
+        
+        leftButton.sd.layout {
+            $0.width = 52
+            $0.height = 28
+            $0.left = DeviceIsXGroup ? 50 : 20
+            $0.centerY = toolBar.bounds.height * 0.5
+        }
+        
+        rightButton.sd.layout {
+            $0.width = 52
+            $0.height = 28
+            $0.right = toolBar.bounds.width - (DeviceIsXGroup ? 50 : 20)
+            $0.centerY = toolBar.bounds.height * 0.5
+        }
+        
+        if let `content` = content {
+            content.view.sd.layout {
+                $0.top = toolBar.frame.maxY
+                $0.left = 0
+                $0.bottom = bounds.height
+                $0.right = bounds.width
+            }
         }
     }
     
@@ -119,6 +131,12 @@ final public class InputKeyboard<T: ViewableType>: UIView {
         let v = UIView()
         v.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         return v
+    }()
+    
+    lazy var toolBarLine: UIView = {
+        let temp = UIView()
+        temp.backgroundColor = UIColor(hex: 0xe1e1e1)
+        return temp
     }()
     
     public lazy var leftButton: UIButton = {

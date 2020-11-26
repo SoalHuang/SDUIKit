@@ -77,7 +77,6 @@
 		9C01A5112060A1740043AF4E /* UICollectionView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuse.swift"; sourceTree = "<group>"; };
 		9C01A5142060A4530043AF4E /* UIView+Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Xib.swift"; sourceTree = "<group>"; };
 		9C09B731253EE6EA00113A2F /* SDFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDFoundation.framework; path = Carthage/Build/iOS/SDFoundation.framework; sourceTree = "<group>"; };
-		9C09B732253EE6EB00113A2F /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		9C0D4D4A214FAC020036E3C6 /* UIImage+CICode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CICode.swift"; sourceTree = "<group>"; };
 		9C0D4D50214FB8210036E3C6 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
 		9C0D4D52215098270036E3C6 /* UITableView+Insets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Insets.swift"; sourceTree = "<group>"; };
@@ -360,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				9C09B731253EE6EA00113A2F /* SDFoundation.framework */,
-				9C09B732253EE6EB00113A2F /* SnapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

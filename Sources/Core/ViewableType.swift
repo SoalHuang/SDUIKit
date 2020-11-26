@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 import SDFoundation
 
 public protocol ViewableType: NSObjectProtocol {
@@ -759,13 +758,6 @@ extension UIViewController: ViewableType {
     }
 }
 
-extension ViewableType {
-    
-    public var snp: SnapKit.ConstraintViewDSL {
-        return view.snp
-    }
-}
-
 public extension SDExtension where T: ViewableType {
     
     func isSub<T: ViewableType>(of type: T.Type) -> Bool {
@@ -774,10 +766,6 @@ public extension SDExtension where T: ViewableType {
 }
 
 public extension SDExtension where T: ViewableType {
-    
-    var snp: SnapKit.ConstraintViewDSL {
-        return base.view.snp
-    }
     
     func debugBorder() {
         
