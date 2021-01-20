@@ -29,6 +29,7 @@ private let _random_resource_: [String] = ["A", "B", "C", "D", "E", "F",
                                            "5", "6", "7", "8", "9", "0"]
 
 private let uuidKeychainKey: String = "UUID"
+private let accessGroup: String = "com.sunlands"
 
 public extension SDExtension where T: UIDevice {
     
@@ -37,22 +38,17 @@ public extension SDExtension where T: UIDevice {
         if let keychainedId = getKeychainedUUID() {
             return keychainedId
         }
-        if let storeId = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? String {
-            setKeychainUUID(storeId)
-            return storeId
-        }
         let newId = UIDevice.current.identifierForVendor?.uuidString ?? random()
         setKeychainUUID(newId)
-        NSKeyedArchiver.archiveRootObject(newId, toFile: filePath)
         return newId
     }
     
     private func getKeychainedUUID() -> String? {
         let keychain = KeychainSwift()
         if let idPrefix = Bundle.main.object(forInfoDictionaryKey: "AppIdentifierPrefix") as? String {
-            keychain.accessGroup = idPrefix + ".putao"
+            keychain.accessGroup = idPrefix + ".sunlands"
         } else {
-            keychain.accessGroup = "com.putao"
+            keychain.accessGroup = accessGroup
         }
         guard
             let data = keychain.getData(uuidKeychainKey),
@@ -65,19 +61,11 @@ public extension SDExtension where T: UIDevice {
         guard let `id` = id, let data = id.data(using: .utf8) else { return }
         let keychain = KeychainSwift()
         if let idPrefix = Bundle.main.object(forInfoDictionaryKey: "AppIdentifierPrefix") as? String {
-            keychain.accessGroup = idPrefix + ".putao"
+            keychain.accessGroup = idPrefix + ".sunlands"
         } else {
-            keychain.accessGroup = "com.putao"
+            keychain.accessGroup = accessGroup
         }
         keychain.set(data, forKey: uuidKeychainKey)
-    }
-    
-    /// deviceUUID.data 不要修改，否则更新会丢失原有UUID
-    private var filePath: String {
-        guard let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first else {
-            return NSHomeDirectory().sd.appendingPathComponent("Library/deviceUUID.data")
-        }
-        return path.sd.appendingPathComponent("deviceUUID.data")
     }
     
     private func random() -> String {

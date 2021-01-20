@@ -40,7 +40,7 @@ public extension SDExtension where T: CALayer {
 
 fileprivate extension CALayer {
     
-    private static var gradientLayerBindKey: String = "com.putao.layer.gradient.layer.bind.key"
+    private static var gradientLayerBindKey: String = "com.sd.layer.gradient.layer.bind.key"
     var gradientLayer: CAGradientLayer? {
         get { return sd.binded(for: &CALayer.gradientLayerBindKey) }
         set { sd.bind(object: newValue, for: &CALayer.gradientLayerBindKey, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }

@@ -11,7 +11,7 @@ import ObjectiveC.runtime
 
 public extension CALayer {
     
-    static var group_associated_key = "com.putao.animation.group.associated.key"
+    static var group_associated_key = "com.sd.animation.group.associated.key"
     private var groups: [String: AnimationGroup]? {
         get { return objc_getAssociatedObject(self, &CALayer.group_associated_key) as? [String : AnimationGroup] }
         set { objc_setAssociatedObject(self, &CALayer.group_associated_key, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }

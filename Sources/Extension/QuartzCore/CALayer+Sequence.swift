@@ -11,7 +11,7 @@ import ObjectiveC.runtime
 
 extension CAAnimation {
     
-    static var animation_associated_tag_key = "com.putao.animation.associated.tag.key"
+    static var animation_associated_tag_key = "com.sd.animation.associated.tag.key"
     public var tag: Int {
         get { return (objc_getAssociatedObject(self, CAAnimation.animation_associated_tag_key) as? Int) ?? 0 }
         set { objc_setAssociatedObject(self, CAAnimation.animation_associated_tag_key, newValue, .OBJC_ASSOCIATION_ASSIGN)}
@@ -20,7 +20,7 @@ extension CAAnimation {
 
 public extension CALayer {
     
-    static var sequence_associated_key = "com.putao.animation.sequence.associated.key"
+    static var sequence_associated_key = "com.sd.animation.sequence.associated.key"
     private var sequences: [String: AnimationSequence]? {
         get { return objc_getAssociatedObject(self, &CALayer.sequence_associated_key) as? [String : AnimationSequence] }
         set { objc_setAssociatedObject(self, &CALayer.sequence_associated_key, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
