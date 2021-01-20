@@ -81,13 +81,13 @@ fileprivate extension UIScreen {
     }
     
     //link key
-    private static var brightnessLinkKey = "com.putao.uikit.brightness.link"
+    private static var brightnessLinkKey = "com.sd.uikit.brightness.link"
     
     //最终的亮度值
-    private static var brightnessKey = "com.putao.uikit.brightness.brightness"
+    private static var brightnessKey = "com.sd.uikit.brightness.brightness"
     
     //每次修改的亮度值
-    private static var brightnessStepKey = "com.putao.uikit.brightness.step"
+    private static var brightnessStepKey = "com.sd.uikit.brightness.step"
     
     //默认周期
     private static let brightnessDefaultTimeInt: TimeInterval = 0.5

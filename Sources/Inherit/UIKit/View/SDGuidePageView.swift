@@ -46,7 +46,7 @@ extension SDGuidePageView {
 @IBDesignable
 open class SDGuidePageView: UIView {
     
-    static let storeKey = "com.putao.park.guide"
+    static let storeKey = "com.sd.guide"
     
     /// 留边
     @IBInspectable

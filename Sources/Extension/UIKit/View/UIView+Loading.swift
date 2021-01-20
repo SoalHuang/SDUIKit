@@ -23,7 +23,7 @@ public class UIViewLoadingProxy {
         self.base = base
     }
     
-    private static var bindedKey: String = "com.putao.uikit.loading.bind.key"
+    private static var bindedKey: String = "com.sd.uikit.loading.bind.key"
     
     private var activityView: UIActivityIndicatorView? {
         get { return base.view.sd.binded(for: &UIViewLoadingProxy.bindedKey) }
