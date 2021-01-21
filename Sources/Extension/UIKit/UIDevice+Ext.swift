@@ -28,8 +28,7 @@ private let _random_resource_: [String] = ["A", "B", "C", "D", "E", "F",
                                            "Y", "Z", "1", "2", "3", "4",
                                            "5", "6", "7", "8", "9", "0"]
 
-private let uuidKeychainKey: String = "UUID"
-private let accessGroup: String = "com.sunlands"
+public let UUIDKeychainKey: String = "com.sunlands.uuid"
 
 public extension SDExtension where T: UIDevice {
     
@@ -45,13 +44,8 @@ public extension SDExtension where T: UIDevice {
     
     private func getKeychainedUUID() -> String? {
         let keychain = KeychainSwift()
-        if let idPrefix = Bundle.main.object(forInfoDictionaryKey: "AppIdentifierPrefix") as? String {
-            keychain.accessGroup = idPrefix + ".sunlands"
-        } else {
-            keychain.accessGroup = accessGroup
-        }
         guard
-            let data = keychain.getData(uuidKeychainKey),
+            let data = keychain.getData(UUIDKeychainKey),
             let id = String(data: data, encoding: .utf8)
             else { return nil }
         return id
@@ -60,12 +54,7 @@ public extension SDExtension where T: UIDevice {
     private func setKeychainUUID(_ id: String?) {
         guard let `id` = id, let data = id.data(using: .utf8) else { return }
         let keychain = KeychainSwift()
-        if let idPrefix = Bundle.main.object(forInfoDictionaryKey: "AppIdentifierPrefix") as? String {
-            keychain.accessGroup = idPrefix + ".sunlands"
-        } else {
-            keychain.accessGroup = accessGroup
-        }
-        keychain.set(data, forKey: uuidKeychainKey)
+        keychain.set(data, forKey: UUIDKeychainKey)
     }
     
     private func random() -> String {
