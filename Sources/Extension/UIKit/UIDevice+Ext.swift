@@ -38,7 +38,12 @@ public extension SDExtension where T: UIDevice {
             return keychainedId
         }
         let newId = UIDevice.current.identifierForVendor?.uuidString ?? random()
-        setKeychainUUID(newId)
+        let result = setKeychainUUID(newId)
+        if !result {
+            #if DEBUG
+            print("Keychain set \(newId) for \(UUIDKeychainKey) failed!")
+            #endif
+        }
         return newId
     }
     
@@ -51,10 +56,11 @@ public extension SDExtension where T: UIDevice {
         return id
     }
     
-    private func setKeychainUUID(_ id: String?) {
-        guard let `id` = id, let data = id.data(using: .utf8) else { return }
+    @discardableResult
+    private func setKeychainUUID(_ id: String?) -> Bool {
+        guard let `id` = id, let data = id.data(using: .utf8) else { return false }
         let keychain = KeychainSwift()
-        keychain.set(data, forKey: UUIDKeychainKey)
+        return keychain.set(data, forKey: UUIDKeychainKey)
     }
     
     private func random() -> String {
