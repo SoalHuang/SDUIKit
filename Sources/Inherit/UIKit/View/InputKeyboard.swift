@@ -63,9 +63,24 @@ extension InputKeyboard where T: UIPickerView {
     }
 }
 
+public protocol InputKeyboardToolViewType: ViewableType {
+    
+    var titleLabel: UILabel { get }
+    
+    var leftButton: UIButton { get }
+    
+    var rightButton: UIButton { get }
+}
+
 final public class InputKeyboard<T: ViewableType>: UIView {
     
     public typealias contentType = T
+    
+    public var toolBar: InputKeyboardToolViewType = InputKeyboardToolView(frame: CGRect(width: UIScreen.main.bounds.width, height: 44)) {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     
     public private(set) weak var content: T?
     
@@ -77,44 +92,22 @@ final public class InputKeyboard<T: ViewableType>: UIView {
         self.content = content
         super.init(frame: frame)
         
-        addSubview(toolBar)
+        toolBar.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
-        toolBar.addSubview(leftButton)
-        toolBar.addSubview(rightButton)
-        toolBar.addSubview(toolBarLine)
+        addSub(content)
+        addSub(toolBar)
         
-        insertSubview(content, at: 0)
+        toolBar.bringToFront()
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        toolBar.sd.layout {
+        toolBar.view.sd.layout {
             $0.height = 44
             $0.top = 0
             $0.left = 0
             $0.right = bounds.width
-        }
-        
-        toolBarLine.sd.layout {
-            $0.height = 1
-            $0.left = 0
-            $0.bottom = toolBar.bounds.height
-            $0.right = toolBar.bounds.width
-        }
-        
-        leftButton.sd.layout {
-            $0.width = 52
-            $0.height = 28
-            $0.left = DeviceIsXGroup ? 50 : 20
-            $0.centerY = toolBar.bounds.height * 0.5
-        }
-        
-        rightButton.sd.layout {
-            $0.width = 52
-            $0.height = 28
-            $0.right = toolBar.bounds.width - (DeviceIsXGroup ? 50 : 20)
-            $0.centerY = toolBar.bounds.height * 0.5
         }
         
         if let `content` = content {
@@ -127,11 +120,61 @@ final public class InputKeyboard<T: ViewableType>: UIView {
         }
     }
     
-    public lazy var toolBar: UIView = {
-        let v = UIView()
-        v.backgroundColor = UIColor.white.withAlphaComponent(0.5)
-        return v
-    }()
+    private var dataSource: InputKeyboard<UIPickerView>.PickerDataSource?
+}
+
+final public class InputKeyboardToolView: UIView, InputKeyboardToolViewType {
+    
+    deinit {
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    private func setup() {
+        backgroundColor = .white
+        
+        addSubview(leftButton)
+        addSubview(titleLabel)
+        addSubview(rightButton)
+        addSubview(toolBarLine)
+        
+        toolBarLine.sd.layout {
+            $0.height = 1
+            $0.left = 0
+            $0.bottom = bounds.height
+            $0.right = bounds.width
+        }
+        
+        leftButton.sd.layout {
+            $0.width = 52
+            $0.height = 28
+            $0.left = DeviceIsXGroup ? 50 : 20
+            $0.centerY = bounds.height * 0.5
+        }
+        
+        rightButton.sd.layout {
+            $0.width = 52
+            $0.height = 28
+            $0.right = bounds.width - (DeviceIsXGroup ? 50 : 20)
+            $0.centerY = bounds.height * 0.5
+        }
+        
+        titleLabel.sd.layout {
+            $0.left = leftButton.sd.right + 4
+            $0.right = rightButton.sd.left - 4
+            $0.height = 28
+            $0.centerY = bounds.height * 0.5
+        }
+    }
     
     lazy var toolBarLine: UIView = {
         let temp = UIView()
@@ -148,6 +191,15 @@ final public class InputKeyboard<T: ViewableType>: UIView {
         return button
     }()
     
+    public lazy var titleLabel: UILabel = {
+        let temp = UILabel()
+        temp.backgroundColor = .clear
+        temp.font = UIFont.systemFont(ofSize: 14)
+        temp.textColor = UIColor(hex: 0x000000)
+        temp.textAlignment = .center
+        return temp
+    }()
+    
     public lazy var rightButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 32))
         button.setTitleColor(UIColor(hex: 0x959595), for: .disabled)
@@ -156,6 +208,4 @@ final public class InputKeyboard<T: ViewableType>: UIView {
         button.setTitle("确 定", for: .normal)
         return button
     }()
-    
-    private var dataSource: InputKeyboard<UIPickerView>.PickerDataSource?
 }
