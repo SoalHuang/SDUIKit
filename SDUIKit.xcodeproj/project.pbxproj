@@ -62,7 +62,7 @@
 		9CFB5EC42092BB3200CC7C03 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB5EC32092BB3200CC7C03 /* UITableView+Ext.swift */; };
 		9CFB5ED4209C67D400CC7C03 /* NSLayoutManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB5ED3209C67D400CC7C03 /* NSLayoutManager+Ext.swift */; };
 		9CFCB3AF24629F6D00ACCAE3 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCB3AE24629F6D00ACCAE3 /* UIViewController+Navigation.swift */; };
-		9CFCB3B12462B7A000ACCAE3 /* MonitorWIndow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCB3B02462B7A000ACCAE3 /* MonitorWIndow.swift */; };
+		9CFCB3B12462B7A000ACCAE3 /* MonitorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCB3B02462B7A000ACCAE3 /* MonitorWindow.swift */; };
 		9CFE7A902248DCC3009CEA5C /* InputKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE7A8F2248DCC3009CEA5C /* InputKeyboard.swift */; };
 		9CFE7A942248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE7A932248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift */; };
 		9CFE7A962248E008009CEA5C /* UIPickerView+InputKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE7A952248E008009CEA5C /* UIPickerView+InputKeyboard.swift */; };
@@ -131,7 +131,7 @@
 		9CFB5EC32092BB3200CC7C03 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		9CFB5ED3209C67D400CC7C03 /* NSLayoutManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutManager+Ext.swift"; sourceTree = "<group>"; };
 		9CFCB3AE24629F6D00ACCAE3 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
-		9CFCB3B02462B7A000ACCAE3 /* MonitorWIndow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorWIndow.swift; sourceTree = "<group>"; };
+		9CFCB3B02462B7A000ACCAE3 /* MonitorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorWindow.swift; sourceTree = "<group>"; };
 		9CFE7A8F2248DCC3009CEA5C /* InputKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKeyboard.swift; sourceTree = "<group>"; };
 		9CFE7A932248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+InputKeyboard.swift"; sourceTree = "<group>"; };
 		9CFE7A952248E008009CEA5C /* UIPickerView+InputKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPickerView+InputKeyboard.swift"; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 				9CB238CB2122A7E300E27862 /* SDColorButton.swift */,
 				9C1E848921EF258A005D6FBF /* SDSceneView.swift */,
 				9CFE7A8F2248DCC3009CEA5C /* InputKeyboard.swift */,
-				9CFCB3B02462B7A000ACCAE3 /* MonitorWIndow.swift */,
+				9CFCB3B02462B7A000ACCAE3 /* MonitorWindow.swift */,
 				9CD85E1D246533A4007297A1 /* CircleProgressView.swift */,
 			);
 			path = View;
@@ -508,7 +508,7 @@
 				9CCBC787205BCB390055BC1B /* UIDevice+Ext.swift in Sources */,
 				9C18CA78206131F500A5830D /* UIColor+Ext.swift in Sources */,
 				9CD85E2B24653755007297A1 /* UILabel+Inspectable.m in Sources */,
-				9CFCB3B12462B7A000ACCAE3 /* MonitorWIndow.swift in Sources */,
+				9CFCB3B12462B7A000ACCAE3 /* MonitorWindow.swift in Sources */,
 				9CFB5ED4209C67D400CC7C03 /* NSLayoutManager+Ext.swift in Sources */,
 				9C16F911205B94B800ED2089 /* UIView+Layout.swift in Sources */,
 				9CFCB3AF24629F6D00ACCAE3 /* UIViewController+Navigation.swift in Sources */,
