@@ -63,9 +63,6 @@
 		9CFB5ED4209C67D400CC7C03 /* NSLayoutManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB5ED3209C67D400CC7C03 /* NSLayoutManager+Ext.swift */; };
 		9CFCB3AF24629F6D00ACCAE3 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCB3AE24629F6D00ACCAE3 /* UIViewController+Navigation.swift */; };
 		9CFCB3B12462B7A000ACCAE3 /* MonitorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCB3B02462B7A000ACCAE3 /* MonitorWindow.swift */; };
-		9CFE7A902248DCC3009CEA5C /* InputKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE7A8F2248DCC3009CEA5C /* InputKeyboard.swift */; };
-		9CFE7A942248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE7A932248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift */; };
-		9CFE7A962248E008009CEA5C /* UIPickerView+InputKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE7A952248E008009CEA5C /* UIPickerView+InputKeyboard.swift */; };
 		9CFF67D622BB9ABC00A59DB0 /* CALayer+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF67D522BB9ABC00A59DB0 /* CALayer+Group.swift */; };
 		9CFF67D822BB9ACB00A59DB0 /* AnimationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF67D722BB9ACB00A59DB0 /* AnimationGroup.swift */; };
 		E414AB5C22A8B8C500B35F1E /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414AB5B22A8B8C500B35F1E /* UIImage+Ext.swift */; };
@@ -132,9 +129,6 @@
 		9CFB5ED3209C67D400CC7C03 /* NSLayoutManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutManager+Ext.swift"; sourceTree = "<group>"; };
 		9CFCB3AE24629F6D00ACCAE3 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		9CFCB3B02462B7A000ACCAE3 /* MonitorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorWindow.swift; sourceTree = "<group>"; };
-		9CFE7A8F2248DCC3009CEA5C /* InputKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKeyboard.swift; sourceTree = "<group>"; };
-		9CFE7A932248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+InputKeyboard.swift"; sourceTree = "<group>"; };
-		9CFE7A952248E008009CEA5C /* UIPickerView+InputKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPickerView+InputKeyboard.swift"; sourceTree = "<group>"; };
 		9CFF67D522BB9ABC00A59DB0 /* CALayer+Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Group.swift"; sourceTree = "<group>"; };
 		9CFF67D722BB9ACB00A59DB0 /* AnimationGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationGroup.swift; sourceTree = "<group>"; };
 		E414AB5B22A8B8C500B35F1E /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
@@ -243,8 +237,6 @@
 				9CFB5EC32092BB3200CC7C03 /* UITableView+Ext.swift */,
 				9CC172BA2105ACBF001DF3BF /* UIScreen+Brightness.swift */,
 				9CA316BC210EB5E70016457E /* UIView+Badge.swift */,
-				9CFE7A932248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift */,
-				9CFE7A952248E008009CEA5C /* UIPickerView+InputKeyboard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,7 +291,6 @@
 				9CA316C421105C6D0016457E /* SDActionSheet.swift */,
 				9CB238CB2122A7E300E27862 /* SDColorButton.swift */,
 				9C1E848921EF258A005D6FBF /* SDSceneView.swift */,
-				9CFE7A8F2248DCC3009CEA5C /* InputKeyboard.swift */,
 				9CFCB3B02462B7A000ACCAE3 /* MonitorWindow.swift */,
 				9CD85E1D246533A4007297A1 /* CircleProgressView.swift */,
 			);
@@ -466,14 +457,12 @@
 				9CD85E1E246533A4007297A1 /* CircleProgressView.swift in Sources */,
 				9CB238CC2122A7E300E27862 /* SDColorButton.swift in Sources */,
 				9C01A5152060A4530043AF4E /* UIView+Xib.swift in Sources */,
-				9CFE7A962248E008009CEA5C /* UIPickerView+InputKeyboard.swift in Sources */,
 				9C24A0982056542B008831EC /* CALayer+Border.swift in Sources */,
 				9CD85E31246539A2007297A1 /* UILabel+Shadow.swift in Sources */,
 				9CD85E33246539C2007297A1 /* UIButton+Shadow.swift in Sources */,
 				9CA52FDC23D19F6200DE486F /* UIDevice+Info.swift in Sources */,
 				9CA316BD210EB5E70016457E /* UIView+Badge.swift in Sources */,
 				9CD85E1424652CC8007297A1 /* Constants.swift in Sources */,
-				9CFE7A942248DFF7009CEA5C /* UIDatePicker+InputKeyboard.swift in Sources */,
 				9CEB07FC2062490C00678B0F /* UIView+Loading.swift in Sources */,
 				9CA316C1210EE94A0016457E /* CALayer+Shadow.swift in Sources */,
 				9C88CF25214678150007BB58 /* String+CICode.swift in Sources */,
@@ -481,7 +470,6 @@
 				9C18CA7520610FFC00A5830D /* SDSegmentControl.swift in Sources */,
 				9C0D4D4B214FAC020036E3C6 /* UIImage+CICode.swift in Sources */,
 				9C3AB5E62060DC290088BF59 /* UIControl+Action.swift in Sources */,
-				9CFE7A902248DCC3009CEA5C /* InputKeyboard.swift in Sources */,
 				9CA316C3210EEDE40016457E /* CALayer+Gradient.swift in Sources */,
 				9CFB5EC42092BB3200CC7C03 /* UITableView+Ext.swift in Sources */,
 				9C54C4D622897C5400DA8590 /* UIView+Color.swift in Sources */,
